@@ -1,0 +1,18 @@
+﻿
+@model ViewImageViewModel
+
+<div class="row">
+    <div class="col-md-10 offset-md-1 p-4 rounded shadow">
+        <input type="hidden" id="image-id" value="@Model.Image.Id" />
+        <h3>@Model.Image.Title</h3>
+        <h3>Uploaded on @Model.Image.Date.ToShortDateString()</h3>
+        <img src="/uploads/@Model.Image.ImagePath" style="width:80px;"/>
+        <br />
+        <br />
+        <button id="like-btn" class="btn btn-primary btn-lg" data-image-id="@Model.Image.Id">LIKE</button> Current Likes: <span id="likes-count">@Model.Image.Likes</span>
+    </div>
+
+    @section Scripts{
+        <script src="~/js/image.js"></script>
+    }
+</div>

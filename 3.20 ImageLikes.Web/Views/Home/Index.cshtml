@@ -1,0 +1,17 @@
+﻿@using _3._20_ImageLikes.Data
+@model IndexViewModel
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        @foreach(Image image in Model.Images)
+        {
+            <div class="bg-light p-4 rounded shadow mb-3" stlye="margin-bottom: 20px; text-align:center;">
+            <a href="/home/viewimage?id=@image.Id">
+            <h3>@image.Title</h3>
+            <h3>Uploaded at:@image.Date.ToShortDateString()</h3>
+            <img style="width: 80px;" src="/uploads/@image.ImagePath" />
+            </a>
+        </div>
+        }
+    </div>
+</div>
